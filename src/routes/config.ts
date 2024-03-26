@@ -4,7 +4,7 @@ export const DEFAULT_LOGIN_REDIRECT = examplePaths.profile();
 
 export const API_AUTH_PREFIX = "/api/auth";
 
-export const PUBLIC_ROUTES = ["/", "about", "services", "contact"];
+export const PUBLIC_ROUTES = ["/", "/about", "/services", "/contact"];
 
 export const AUTH_ROUTES = [
   authPaths.login(),
