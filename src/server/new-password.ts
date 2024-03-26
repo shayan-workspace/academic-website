@@ -11,7 +11,7 @@ import { PasswordResetValidator } from "@/validators";
 
 export async function newPassword(
   fields: zod.infer<typeof PasswordResetValidator>,
-  token: string
+  token: string,
 ) {
   const validatedFields = PasswordResetValidator.safeParse(fields);
 

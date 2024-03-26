@@ -35,7 +35,7 @@ export function NewPasswordRequestForm() {
   });
 
   function onSubmit(
-    validatedFields: zod.infer<typeof PasswordResetRequestValidator>
+    validatedFields: zod.infer<typeof PasswordResetRequestValidator>,
   ) {
     setError("");
     setSuccess("");

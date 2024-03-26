@@ -75,4 +75,5 @@ Running commands with npm `pnpm [command]`
 | `build` | Optimize Production App   |
 | `start` | Starts App                |
 | `lint`  | Lint Code                 |
+
 # academic-website

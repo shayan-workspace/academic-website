@@ -11,7 +11,7 @@ import { generateVerificationToken } from "@/lib/tokens";
 import { RegisterRequestValidator } from "@/validators";
 
 export async function registerRequest(
-  fields: zod.infer<typeof RegisterRequestValidator>
+  fields: zod.infer<typeof RegisterRequestValidator>,
 ) {
   const validatedFields = RegisterRequestValidator.safeParse(fields);
 

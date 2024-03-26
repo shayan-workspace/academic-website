@@ -37,7 +37,7 @@ export function RegisterRequestForm() {
   });
 
   function onSubmit(
-    validatedFields: zod.infer<typeof RegisterRequestValidator>
+    validatedFields: zod.infer<typeof RegisterRequestValidator>,
   ) {
     setError("");
     setSuccess("");

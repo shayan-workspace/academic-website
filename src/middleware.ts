@@ -46,7 +46,7 @@ export default auth((req) => {
     const loginPath = authPaths.login();
 
     return Response.redirect(
-      new URL(`${loginPath}?callbackUrl=${encodedCallbackUrl}`, nextUrl)
+      new URL(`${loginPath}?callbackUrl=${encodedCallbackUrl}`, nextUrl),
     );
   }
 

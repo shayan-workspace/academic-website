@@ -38,7 +38,7 @@ export default {
 
           const isValidCredentials = await bcrypt.compare(
             password,
-            user.password
+            user.password,
           );
 
           if (isValidCredentials) return user;

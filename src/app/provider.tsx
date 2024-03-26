@@ -15,12 +15,7 @@ export function RootProvider({
   children,
 }: Readonly<PropsWithChildren<RootProviderProps>>) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <ThemeProvider attribute="class" defaultTheme="light">
       <SessionProvider session={session}>{children}</SessionProvider>
     </ThemeProvider>
   );

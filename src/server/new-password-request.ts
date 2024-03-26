@@ -9,7 +9,7 @@ import { generatePasswordResetToken } from "@/lib/tokens";
 import { PasswordResetRequestValidator } from "@/validators";
 
 export async function newPasswordRequest(
-  flields: zod.infer<typeof PasswordResetRequestValidator>
+  flields: zod.infer<typeof PasswordResetRequestValidator>,
 ) {
   const validatedFields = PasswordResetRequestValidator.safeParse(flields);
 
@@ -32,7 +32,7 @@ export async function newPasswordRequest(
 
   await sendPasswordResetEmail(
     passwordResetToken.email,
-    passwordResetToken.token
+    passwordResetToken.token,
   );
 
   return { status: true, message: "Reset email sent!", payload: {} };

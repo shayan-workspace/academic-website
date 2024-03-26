@@ -20,7 +20,7 @@ import { DEFAULT_LOGIN_REDIRECT } from "@/routes/config";
 
 export async function login(
   fields: zod.infer<typeof LoginValidator>,
-  callbackUrl: string | null
+  callbackUrl: string | null,
 ) {
   const validatedFields = LoginValidator.safeParse(fields);
 
@@ -41,12 +41,12 @@ export async function login(
   // If the user's email is not verified, send a verification email
   if (!existingUser.emailVerified) {
     const verificationToken = await generateVerificationToken(
-      existingUser.email
+      existingUser.email,
     );
 
     await sendVerificationEmail(
       verificationToken.email,
-      verificationToken.token
+      verificationToken.token,
     );
 
     return {
@@ -80,7 +80,7 @@ export async function login(
 
       // If the user has an existing confirmation, delete it
       const existingConfirmation = await getTwoFactorConfirmationByUserId(
-        existingUser.id
+        existingUser.id,
       );
 
       if (existingConfirmation) {

@@ -63,7 +63,7 @@ export const {
       // Check 2FA is enabled
       if (dbUser.isTwoFactorEnabled) {
         const twoFactorConfirmation = await getTwoFactorConfirmationByUserId(
-          dbUser.id
+          dbUser.id,
         );
 
         // Prevent Sign In without 2FA Confirmation

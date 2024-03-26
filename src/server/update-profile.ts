@@ -12,7 +12,7 @@ import { sendVerificationEmail } from "@/lib/emails";
 import { UpdateProfileValidator } from "@/validators";
 
 export async function updateProfile(
-  fields: zod.infer<typeof UpdateProfileValidator>
+  fields: zod.infer<typeof UpdateProfileValidator>,
 ) {
   // If the fields are invalid, return an error
   const validatedFields = UpdateProfileValidator.safeParse(fields);
@@ -53,12 +53,12 @@ export async function updateProfile(
     }
 
     const verificationToken = await generateVerificationToken(
-      validatedFields.data.email
+      validatedFields.data.email,
     );
 
     await sendVerificationEmail(
       verificationToken.email,
-      verificationToken.token
+      verificationToken.token,
     );
 
     return { status: true, message: "Verification email sent!", payload: {} };
@@ -73,7 +73,7 @@ export async function updateProfile(
     // If the password is incorrect, return an error
     const passwordsMatch = await bcrypt.compare(
       validatedFields.data.password,
-      dbUser.password
+      dbUser.password,
     );
 
     if (!passwordsMatch) {
@@ -83,7 +83,7 @@ export async function updateProfile(
     // Hash the new password
     const hashedPassword = await bcrypt.hash(
       validatedFields.data.newPassword,
-      10
+      10,
     );
 
     // Update the password

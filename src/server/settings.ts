@@ -12,7 +12,7 @@ import { generateVerificationToken } from "@/lib/tokens";
 import { sendVerificationEmail } from "@/lib/emails";
 
 export const settings = async (
-  values: zod.infer<typeof UpdateProfileValidator>
+  values: zod.infer<typeof UpdateProfileValidator>,
 ) => {
   const user = await getCurrentUser();
 
@@ -43,7 +43,7 @@ export const settings = async (
     const verificationToken = await generateVerificationToken(values.email);
     await sendVerificationEmail(
       verificationToken.email,
-      verificationToken.token
+      verificationToken.token,
     );
 
     return { success: "Verification email sent!" };
@@ -52,7 +52,7 @@ export const settings = async (
   if (values.password && values.newPassword && dbUser.password) {
     const passwordsMatch = await bcrypt.compare(
       values.password,
-      dbUser.password
+      dbUser.password,
     );
 
     if (!passwordsMatch) {

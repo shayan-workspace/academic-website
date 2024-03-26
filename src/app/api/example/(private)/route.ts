@@ -8,7 +8,7 @@ export async function GET() {
   if (role !== Role.ADMIN) {
     return NextResponse.json(
       { message: "Forbidden API Route!" },
-      { status: 403 }
+      { status: 403 },
     );
   }
 
