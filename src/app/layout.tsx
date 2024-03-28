@@ -3,6 +3,7 @@ import type { PropsWithChildren } from "react";
 
 import { RootProvider } from "./provider";
 
+import { Navbar } from "@/components/navbar";
 import { Toaster } from "@/components/ui/sonner";
 
 import { auth } from "@/lib/auth";
@@ -20,6 +21,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
     <html lang="en" suppressHydrationWarning>
       <body>
         <RootProvider session={session}>
+          <header>
+            <Navbar />
+          </header>
           {children}
           <Toaster />
         </RootProvider>
