@@ -11,7 +11,7 @@ import { auth } from "@/lib/auth";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Next Template",
+  title: "Home",
 };
 
 export default async function RootLayout({ children }: PropsWithChildren) {
@@ -19,9 +19,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className="relative">
         <RootProvider session={session}>
-          <header>
+          <header className="bg-orange-50">
             <Navbar />
           </header>
           {children}
