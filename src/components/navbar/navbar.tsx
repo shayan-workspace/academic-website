@@ -26,9 +26,9 @@ export default function Navbar() {
     <nav className="py-12 h-24 max-w-screen-lg mx-auto flex justify-center items-center gap-12">
       <Image height={24} width={24} className="" src={images.logo} alt="logo" />
       <ul className="flex justify-center items-center gap-8">
-        {navLinks.map((item) => {
+        {navLinks.map((item, index) => {
           return (
-            <li>
+            <li key={index}>
               <Link href={item.href}>{item.label}</Link>
             </li>
           );
