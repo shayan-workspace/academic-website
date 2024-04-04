@@ -1,12 +1,20 @@
 import React from "react";
 import Link from "next/link";
 import { MdCalendarMonth, MdMosque, MdVolunteerActivism } from "react-icons/md";
+import { Galada } from "next/font/google";
+
+const galada = Galada({ subsets: ["latin"], weight: ["400"] });
+
 
 export default function Purpose() {
   return (
     <section className="py-20 w-full bg-white  flex justify-center items-center">
       <div className="h-[90%] w-[90%] flex flex-col justify-center items-center gap-5">
-        <span className="text-4xl font-bold text-emerald-700">OUR PURPOSE</span>
+        <span
+          className="text-5xl font-bold text-emerald-700 capitalize"
+          style={galada.style}>
+          our purpose
+        </span>
         <span className="w-[50%] text-xl text-center  ">
           (name) is a non-profit 501(c)(3), tax-exempt, religious organization.
           Its purpose is to promote Islamic teachings, understanding, and unity
@@ -18,15 +26,13 @@ export default function Purpose() {
           {data.map((val, i) => (
             <div
               className=" rounded-lg flex flex-col items-start gap-5 w-[370px] min-h-[300px] p-8 bg-stone-50"
-              key={i}
-            >
+              key={i}>
               <span className="text-amber-600">{val.icon}</span>
               <span className="text-3xl font-semibold">{val.name}</span>
               <span className="text-lg">{val.desc}</span>
               <Link
                 className="border rounded-full p-3 px-8 text-white text-lg font-normal bg-emerald-700 duration-500 hover:scale-105"
-                href={val.url}
-              >
+                href={val.url}>
                 {val.btn}
               </Link>
             </div>

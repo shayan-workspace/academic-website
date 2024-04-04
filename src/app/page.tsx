@@ -2,6 +2,7 @@ import {
   AboutSection,
   HeroSection,
   PurposeSection,
+  PillarsSection,
 } from "@/components/sections";
 
 export default function HomePage() {
@@ -10,6 +11,7 @@ export default function HomePage() {
       <HeroSection />
       <AboutSection />
       <PurposeSection />
+      <PillarsSection/>
     </main>
   );
 }

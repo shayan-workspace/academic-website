@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { images } from "@/assets";
 import Image from "next/image";
+import { Galada } from "next/font/google";
+
+const galada = Galada({ subsets: ["latin"], weight: ["400"] });
 
 export default function AboutSection() {
   return (
@@ -10,14 +13,15 @@ export default function AboutSection() {
           <span className="text-xl text-center text-amber-600">
             {data.title}
           </span>
-          <span className="text-4xl font-bold text-emerald-700">
+          <span
+            className="text-5xl font-bold text-emerald-700"
+            style={galada.style}>
             {data.head}
           </span>
           <span className="text-m text-start">{data.txt}</span>
           <Link
             href={data.url}
-            className=" rounded-full p-3 px-8 text-white text-lg font-normal bg-amber-600 duration-500 hover:scale-105"
-          >
+            className=" rounded-full p-3 px-8 text-white text-lg font-normal bg-amber-600 duration-500 hover:scale-105">
             {data.btn}
           </Link>
         </div>
