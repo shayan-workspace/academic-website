@@ -21,7 +21,7 @@ const PillarsSection = () => {
         <span className="text-xl text-center text-white">{data.name}</span>
         <span
           style={galada.style}
-          className="italic font-bold text-6xl text-amber-500">
+          className="italic text-center font-bold text-6xl text-amber-500">
           {data.txt}
         </span>
         <span className=" w-[90%] flex justify-center items-center flex-wrap gap-10 py-4">
