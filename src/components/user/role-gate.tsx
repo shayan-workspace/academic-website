@@ -1,9 +1,9 @@
 "use client";
 
-import { PropsWithChildren } from "react";
-import { Role } from "@prisma/client";
+import type { PropsWithChildren } from "react";
+import type { Role } from "@prisma/client";
 
-import { Error } from "@/components/common/error";
+import { Error as ErrorComponent } from "@/components/common/error";
 
 import { useCurrentRole } from "@/hooks/use-current-role";
 
@@ -17,8 +17,10 @@ export const RoleGate = ({
 }: Readonly<PropsWithChildren<RoleGateProps>>) => {
   const role = useCurrentRole();
 
-  if (!allowedRoles.includes(role)) {
-    return <Error message="You do not have permission to view this content!" />;
+  if (role && !allowedRoles.includes(role)) {
+    return (
+      <ErrorComponent message="You do not have permission to view this content!" />
+    );
   }
 
   return <>{children}</>;
