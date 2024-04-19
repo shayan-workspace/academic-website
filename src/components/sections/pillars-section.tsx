@@ -3,12 +3,9 @@ import { images } from "@/assets";
 import Image from "next/image";
 import { Galada } from "next/font/google";
 
-
- const galada = Galada({ subsets: ["latin"], weight: ["400"] });
-
+const galada = Galada({ subsets: ["latin"], weight: ["400"] });
 
 const PillarsSection = () => {
- 
   return (
     <div
       className="py-20 w-full flex 
@@ -28,10 +25,12 @@ const PillarsSection = () => {
           {data.pillars.map((val, index) => (
             <div
               key={index}
-              className="border border-amber-500 
-              rounded bg-zinc-800 
+              className="border-none
+              rounded-[20px] bg-zinc-800 opacity-90
               flex justify-center items-center flex-col gap-3 w-[200px] h-[250px]">
-              <span className="bg-emerald-700 rounded-full p-4 text-2xl text-white font-normal">{val.no}</span>
+              <span className="bg-emerald-700 rounded-full p-4 text-2xl text-white font-normal">
+                {val.no}
+              </span>
               <span className="text-white text-3xl font-bold ">{val.name}</span>
               <span className="text-white text-lg">{val.txt}</span>
             </div>
