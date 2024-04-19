@@ -1,6 +1,12 @@
 import React from "react";
 import { Galada } from "next/font/google";
 import Link from "../../../node_modules/next/link";
+import { MdOnlinePrediction } from "react-icons/md";
+import { FaBookReader } from "react-icons/fa";
+import { MdOutlineChildFriendly } from "react-icons/md";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { GiTeacher } from "react-icons/gi";
+import { FaHandsHelping } from "react-icons/fa";
 
 const galada = Galada({ subsets: ["latin"], weight: ["400"] });
 
@@ -40,43 +46,43 @@ const data = {
   head: "We Are Providing Effective Arabic & Quran Services.",
   serviecs: [
     {
-      icon: "",
+      icon: <MdOnlinePrediction className="text-5xl" />,
       name: "Online Quran Class",
       txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nobis odit suscipit error.",
       btn: "Read More",
       url: "/contact",
     },
     {
-      icon: "",
+      icon: <FaBookReader className="text-5xl" />,
       name: "Value Our Student",
       txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nobis odit suscipit error.",
       btn: "Read More",
       url: "/contact",
     },
     {
-      icon: "",
+      icon: <MdOutlineChildFriendly className="text-5xl" />,
       name: "Special Child Care",
       txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nobis odit suscipit error.",
       btn: "Read More",
       url: "/contact",
     },
     {
-      icon: "",
+      icon: <FaHandsHelping className="text-5xl" />,
       name: "Help Poor",
       txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nobis odit suscipit error.",
       btn: "Read More",
       url: "/contact",
     },
     {
-      icon: "",
+      icon: <GiTeacher className="text-5xl" />,
       name: "Tafseer Course",
       txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nobis odit suscipit error.",
       btn: "Read More",
       url: "/contact",
     },
     {
-      icon: "Quick Learning",
-      name: "",
+      icon: <HiOutlineLightBulb className="text-5xl" />,
+      name: "Quick Learning",
       txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nobis odit suscipit error.",
       btn: "Read More",
       url: "/contact",
